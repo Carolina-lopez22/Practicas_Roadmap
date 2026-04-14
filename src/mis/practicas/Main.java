@@ -5,9 +5,10 @@ import mis.practicas.Dias.DiasDeLaSemana;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		ejercicioEnum();
 		ejercicioInitializerBlock();
+		ejercicioPassByValue();
 		
 	}
 
@@ -38,6 +39,24 @@ public class Main {
 		estudiante2.mostrar();
 		estudiante3.mostrar();
 		estudiante4.mostrar();
+	}
+	public static void ejercicioPassByValue() {
+		
+		Producto pro1 = new Producto("Bocina", 2000, 5);
+		
+		modificar(pro1);
+		
+		System.out.println("Cantidad: "+ pro1.cantidad);
+		System.out.println("Nombre: "+pro1.nombre);
+		System.out.println("Precio: "+pro1.precio);
+		
+	}
+		
+	public static void modificar(Producto prod ) {
+			prod.cantidad += 5;
+			
+			prod.nombre= "Tablet";
+			prod.precio= 1000;
 	}
 		
 }
