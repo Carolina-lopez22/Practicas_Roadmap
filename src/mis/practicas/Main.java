@@ -9,6 +9,7 @@ public class Main {
 		ejercicioEnum();
 		ejercicioInitializerBlock();
 		ejercicioPassByValue();
+		ejercicioTypeCasting();
 		
 	}
 
@@ -57,6 +58,10 @@ public class Main {
 			
 			prod.nombre= "Tablet";
 			prod.precio= 1000;
+	}
+	public static void ejercicioTypeCasting() {
+		PromedioConCasting pro1 = new PromedioConCasting(99,98,98);
+		System.out.println("El promedio de notas es: "+pro1.calcularPromedio());
 	}
 		
 }
