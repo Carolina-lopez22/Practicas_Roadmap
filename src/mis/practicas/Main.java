@@ -15,7 +15,7 @@ public class Main {
 		ejercicioPassByValue();
 		ejercicioTypeCasting();
 		ejercicioExceptionHandling();
-		
+		 ejercicioHerenciaYPolimorfismo();
 	}
 
 	private static void ejercicioEnum() {
@@ -68,10 +68,9 @@ public class Main {
 		PromedioConCasting pro1 = new PromedioConCasting(99,98,98);
 		System.out.println("El promedio de notas es: "+pro1.calcularPromedio());
 	}
-	public static void ejercicioExceptionHandling() {
-		
+	
+	public static void ejercicioExceptionHandling() {	
 	        Empleado emp = new Empleado();
-
 	        try {
 
 	            System.out.print("Ingrese salario: ");
@@ -87,7 +86,22 @@ public class Main {
 	        } catch (InputMismatchException e) {
 
 	            System.out.println("Debe ingresar números");
-
-	    } 
+	    }      
 	}
+	public static void ejercicioHerenciaYPolimorfismo() {
+		Usuario usuario = new Maestro("Alexa","alexa123","Contabilidad");//Prueva de validaciones del correo.
+		Usuario usuario1 = new Maestro("David","david12@.com","Matematicas");
+		Usuario usuario2 = new Alumno("Daniela","dani520@.com","Sistemas",0);
+		usuario.mostrarDatos();
+		((Alumno) usuario2).calcularPromedio(86, 75, 95);
+		usuario1.mostrarDatos();
+		usuario2.mostrarDatos();
+	}	
 }
+
+
+
+
+
+
+
