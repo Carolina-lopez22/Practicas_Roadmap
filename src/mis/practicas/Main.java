@@ -1,15 +1,20 @@
 package mis.practicas;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import mis.practicas.Dias.DiasDeLaSemana;
 
-public class Main {
 
+public class Main {
+	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		
+	
 		ejercicioEnum();
 		ejercicioInitializerBlock();
 		ejercicioPassByValue();
 		ejercicioTypeCasting();
+		ejercicioExceptionHandling();
 		
 	}
 
@@ -63,5 +68,26 @@ public class Main {
 		PromedioConCasting pro1 = new PromedioConCasting(99,98,98);
 		System.out.println("El promedio de notas es: "+pro1.calcularPromedio());
 	}
+	public static void ejercicioExceptionHandling() {
 		
+	        Empleado emp = new Empleado();
+
+	        try {
+
+	            System.out.print("Ingrese salario: ");
+	            String salarioTexto = sc.nextLine();
+
+	            emp.setSalario(salarioTexto);
+
+	            System.out.print("Ingrese porcentaje de aumento: ");
+	            double porcentaje = sc.nextDouble();
+
+	            emp.aumentarSalario(porcentaje);
+
+	        } catch (InputMismatchException e) {
+
+	            System.out.println("Debe ingresar números");
+
+	    } 
+	}
 }
